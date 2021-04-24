@@ -4,7 +4,6 @@ const Review = require('../models/Review');
 async function listReviews(req, res) {
   const reviews = await Review.find();
 
-  console.log('reviews:', reviews);
   res.json(reviews);
 }
 async function addReview(req, res) {
