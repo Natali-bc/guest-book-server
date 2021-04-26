@@ -9,7 +9,8 @@ async function listReviews(req, res) {
 async function addReview(req, res) {
   try {
     const { body } = req;
-    const review = await Review.create(body);
+    const newRecord = { date: Date.now(), ...body };
+    const review = await Review.create(newRecord);
     res.status(201).send(review);
   } catch (error) {
     res.status(400).send(error);

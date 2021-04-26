@@ -10,6 +10,10 @@ const ReviewSchema = new Schema({
     type: String,
     required: true,
   },
+  date: {
+    type: Number,
+    required: true,
+  },
 });
 
 const Review = mongoose.model('Review', ReviewSchema);
