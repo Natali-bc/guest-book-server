@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const reviewRouter = require('./routes/reviews.routes');
 
@@ -23,6 +24,11 @@ function initServer() {
 
 function connectMiddlewares(app) {
   app.use(express.json());
+  app.use(
+    cors({
+      origin: '*',
+    }),
+  );
 }
 
 function declareRoutes(app) {
