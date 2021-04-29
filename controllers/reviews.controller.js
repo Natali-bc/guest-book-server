@@ -2,7 +2,7 @@ const Joi = require('joi');
 const Review = require('../models/Review');
 
 async function listReviews(req, res) {
-  const reviews = await Review.find();
+  const reviews = await Review.find({}, null, { sort: { _id: -1 } });
 
   res.json(reviews);
 }
